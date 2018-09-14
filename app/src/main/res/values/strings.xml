@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EasyTour</string>
+
+    <string name="string_reg_email_ET">Enter Your Email</string>
+    <string name="string_reg_password_ET">Enter Your Password</string>
+    <string name="string_reg_BTN">Register</string>
+    <string name="string_reg_TV">Already register? Login here</string>
+
 </resources>
