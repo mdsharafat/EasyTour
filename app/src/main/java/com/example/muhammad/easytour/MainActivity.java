@@ -2,7 +2,12 @@ package com.example.muhammad.easytour;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageButton;
+
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,4 +28,6 @@ public class MainActivity extends AppCompatActivity {
         mHapppyMomentsIBtn = findViewById(R.id.main_happyMoments_iconIBtn);
         mWeatherIBtn = findViewById(R.id.main_weather_iconIBtn);
     }
+
+
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="HOME"
+        android:id="@+id/item_home"
+        app:showAsAction="always"
+        android:icon="@mipmap/ic_launcher_home"
+        />
+
+    <item android:title="PROFILE"
+        android:id="@+id/item_profile"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher_traveller"/>
+
+    <item android:title="SIGN IN"
+        android:id="@+id/item_signIn"
+        app:showAsAction="never"/>
+
+    <item android:title="SIGN OUT"
+        android:id="@+id/item_signOut"
+        app:showAsAction="never"/>
+
+</menu>

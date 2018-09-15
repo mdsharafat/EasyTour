@@ -6,6 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +33,9 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private ProgressDialog progressDialog;
 
     private FirebaseAuth firebaseAuth;
+
+    //menu item
+    private boolean isSignIn= false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,5 +96,56 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         if (view == registrationSigninTV){
 
         }
+    }
+
+
+    //*******************menu item selection method***************************
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater Inflater = getMenuInflater();
+        Inflater.inflate(R.menu.menu_item,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem SignInItem = menu.findItem(R.id.item_signIn);
+        MenuItem SignOutItem = menu.findItem(R.id.item_signOut);
+        MenuItem HomeItem = menu.findItem(R.id.item_home);
+        if(!isSignIn)
+        {
+            SignOutItem.setVisible(true);
+            SignInItem.setVisible(false);
+        }else
+            {
+                SignOutItem.setVisible(false);
+                SignInItem.setVisible(true);
+            }
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_home:
+
+                break;
+            case R.id.item_profile:
+
+                break;
+            case R.id.item_signIn:
+                isSignIn = true;
+                break;
+            case R.id.item_signOut:
+                isSignIn = false;
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
