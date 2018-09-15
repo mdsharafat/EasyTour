@@ -1,4 +1,4 @@
-package com.example.muhammad.easytour.ActiviryRegistrationLogin;
+package com.example.muhammad.easytour.ActivityRegistrationLogin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -6,19 +6,14 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.R;
-import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -35,8 +30,6 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
 
     private FirebaseAuth firebaseAuth;
 
-    //menu item
-    private boolean isSignIn= false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +37,12 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_registration);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        if (firebaseAuth.getCurrentUser() != null){
+            finish();
+            Intent homePage = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(homePage);
+        }
 
         progressDialog = new ProgressDialog(this);
 
@@ -78,10 +77,11 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(RegistrationActivity.this, "Successfull", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                            startActivity(intent);
+                            progressDialog.dismiss();
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }else {
+                            progressDialog.dismiss();
                             Toast.makeText(RegistrationActivity.this, "Error", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -95,58 +95,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             registerUser();
         }
         if (view == registrationSigninTV){
-
+            startActivity(new Intent(this, LoginActivity.class));
         }
-    }
-
-
-    //*******************menu item selection method***************************
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater Inflater = getMenuInflater();
-        Inflater.inflate(R.menu.menu_item,menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-
-        MenuItem SignInItem = menu.findItem(R.id.item_signIn);
-        MenuItem SignOutItem = menu.findItem(R.id.item_signOut);
-        MenuItem HomeItem = menu.findItem(R.id.item_home);
-        if(!isSignIn)
-        {
-            SignOutItem.setVisible(true);
-            SignInItem.setVisible(false);
-        }else
-            {
-                SignOutItem.setVisible(false);
-                SignInItem.setVisible(true);
-            }
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_home:
-                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
-                break;
-            case R.id.item_profile:
-
-                break;
-            case R.id.item_signIn:
-                isSignIn = true;
-                break;
-            case R.id.item_signOut:
-                isSignIn = false;
-
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

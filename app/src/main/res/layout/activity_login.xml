@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActiviryRegistrationLogin.LoginActivity">
+    tools:context=".ActivityRegistrationLogin.LoginActivity">
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:id="@+id/login_email_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/string_reg_email_ET"
+            android:layout_margin="15dp"
+            />
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/login_password_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/string_reg_password_ET"
+            android:layout_margin="15dp"
+            />
+
+        <Button
+            android:id="@+id/login_BTN"
+            android:text="@string/string_login_BTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"/>
+
+        <TextView
+            android:id="@+id/login_TV"
+            android:text="@string/string_login_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGIN"
-        />
+        android:id="@+id/textView2"
+        android:layout_width="147dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="User Login" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

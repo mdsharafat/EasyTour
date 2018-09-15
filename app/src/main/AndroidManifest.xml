@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ActiviryRegistrationLogin.RegistrationActivity">
+        <activity android:name=".ActivityRegistrationLogin.RegistrationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActiviryRegistrationLogin.LoginActivity"></activity>
+        <activity android:name=".ActivityRegistrationLogin.LoginActivity"></activity>
     </application>
 
 </manifest>

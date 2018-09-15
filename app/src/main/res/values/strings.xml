@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">EasyTour</string>
 
+
+    <!-- Registration -->
+    <string name="string_reg_title_ET">User Registration</string>
     <string name="string_reg_email_ET">Enter Your Email</string>
     <string name="string_reg_password_ET">Enter Your Password</string>
     <string name="string_reg_BTN">Register</string>
     <string name="string_reg_TV">Already register? Login here</string>
+
+    <!-- Login -->
+    <string name="string_login_BTN">Login</string>
+    <string name="string_login_TV">Not have an account? Register here</string>
 
 </resources>
