@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.R;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -132,7 +133,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_home:
-
+                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
                 break;
             case R.id.item_profile:
 
