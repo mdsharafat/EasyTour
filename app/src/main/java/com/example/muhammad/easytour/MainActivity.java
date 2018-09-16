@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //********* Start **************
         firebaseAuth = FirebaseAuth.getInstance();
 
         if (firebaseAuth.getCurrentUser() == null){
@@ -42,20 +43,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+        //************** Complete ***********
+
         mWelcomeTV = findViewById(R.id.welcomeTV);
         mLogout = findViewById(R.id.logout);
-        mTravellerProfileIBtn = findViewById(R.id.home_travelerImageIconBTN);
-        mNearbyIBtn = findViewById(R.id.home_nearbyIconBTN);
-        mEventsIBtn = findViewById(R.id.home_eventsIconIBtn);
-        mAllEventsIBtn = findViewById(R.id.home_allEventsIconIBtn);
-        mHapppyMomentsIBtn = findViewById(R.id.main_happyMoments_iconIBtn);
-        mWeatherIBtn = findViewById(R.id.main_weather_iconIBtn);
+//        mTravellerProfileIBtn = findViewById(R.id.home_travelerImageIconBTN);
+//        mNearbyIBtn = findViewById(R.id.home_nearbyIconBTN);
+//        mEventsIBtn = findViewById(R.id.home_eventsIconIBtn);
+//        mAllEventsIBtn = findViewById(R.id.home_allEventsIconIBtn);
+//        mHapppyMomentsIBtn = findViewById(R.id.main_happyMoments_iconIBtn);
+//        mWeatherIBtn = findViewById(R.id.main_weather_iconIBtn);
 
         mLogout.setOnClickListener(this);
 
     }
 
-
+//******************** Start ******************
     @Override
     public void onClick(View view) {
         if (view == mLogout){
@@ -65,4 +68,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+    //***************Complete************
 }

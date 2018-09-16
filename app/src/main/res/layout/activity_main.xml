@@ -4,233 +4,299 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentEnd="true"
     android:layout_alignParentRight="true"
+    android:background="@color/backgroundcolor"
     android:orientation="vertical"
-    android:weightSum="5"
-    android:background="#800a6ba3"
-    tools:context=".MainActivity"
-    android:layout_alignParentEnd="true">
+    android:padding="10dp"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/welcomeTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome"/>
-
-        <Button
-            android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="73dp">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="126dp"
-                android:text="HOME"
-                android:textColor="#f4f4f4"
-                android:textSize="30sp"
-                android:layout_marginRight="126dp"
-                android:layout_alignParentRight="true"
-                android:fontFamily="monospace"/>
-
-            <ImageButton
-                android:id="@+id/home_image_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="97dp"
-                android:layout_marginStart="97dp"
-                android:background="#83b3cf"
-                android:contentDescription="Profile"
-                android:scaleType="fitCenter"
-                android:src="@mipmap/ic_launcher_home" />
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="5dp"
+        android:padding="10dp"
         android:orientation="horizontal">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:layout_margin="5dp">
 
-            <ImageButton
-                android:id="@+id/home_travelerImageIconBTN"
-                android:layout_width="109dp"
-                android:layout_height="91dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="50dp"
-                android:src="@mipmap/ic_launcher_traveller"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/home_nearbyIconBTN"
-                android:layout_width="114dp"
-                android:layout_height="89dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="50dp"
-                app:srcCompat="@mipmap/ic_launcher_nearby"/>
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_user" />
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Profile"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="5dp"
-        android:orientation="horizontal">
+        </android.support.v7.widget.CardView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp">
 
-            <ImageButton
-                android:id="@+id/home_eventsIconIBtn"
-                android:layout_width="109dp"
-                android:layout_height="91dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="50dp"
-                app:srcCompat="@mipmap/ic_launcher_events_log"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/home_allEventsIconIBtn"
-                android:layout_width="114dp"
-                android:layout_height="89dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="50dp"
-                app:srcCompat="@mipmap/ic_launcher_list" />
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_location" />
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Location"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="5dp"
-        android:orientation="horizontal">
+        </android.support.v7.widget.CardView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/main_expence_iconIbtn"
-                android:layout_width="109dp"
-                android:layout_height="91dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="50dp"
-                app:srcCompat="@mipmap/ic_launcher_expense"
-                />
+        <android.support.v7.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:layout_margin="5dp">
 
-            <ImageButton
-                android:id="@+id/main_expenseTracker_iconIBtn"
-                android:layout_width="114dp"
-                android:layout_height="89dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="50dp"
-                app:srcCompat="@mipmap/ic_launcher_expenselist"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_weathercock" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Weather"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:clipToPadding="false"
         android:gravity="center"
-        android:padding="5dp"
+        android:padding="10dp"
         android:orientation="horizontal">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:layout_margin="5dp">
 
-            <ImageButton
-                android:id="@+id/main_happyMoments_iconIBtn"
-                android:layout_width="109dp"
-                android:layout_height="91dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="50dp"
-                app:srcCompat="@mipmap/ic_launcher_teavel_log"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/main_weather_iconIBtn"
-                android:layout_width="114dp"
-                android:layout_height="89dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="50dp"
-                android:background="#83b3cf"
-                android:scaleType="fitCenter"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="50dp"
-                app:srcCompat="@mipmap/ic_launcher_weather_status" />
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_photo_camera" />
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Moments"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_timeline" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Tour Plan"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_list" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Events"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="140dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_credit_card" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Expense"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="140dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_budget" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="Moments"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
 
 </LinearLayout>
