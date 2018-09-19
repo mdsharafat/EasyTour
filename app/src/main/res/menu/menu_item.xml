@@ -13,12 +13,8 @@
         app:showAsAction="never"
         android:icon="@mipmap/ic_launcher_traveller"/>
 
-    <item android:title="SIGN IN"
-        android:id="@+id/item_signIn"
-        app:showAsAction="never"/>
-
-    <item android:title="SIGN OUT"
-        android:id="@+id/item_signOut"
+    <item android:title="LOGOUT "
+        android:id="@+id/item_logout"
         app:showAsAction="never"/>
 
 </menu>

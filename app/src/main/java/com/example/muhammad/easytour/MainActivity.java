@@ -9,8 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.muhammad.easytour.ActivityGoogleMap.MapsActivity;
 import com.example.muhammad.easytour.ActivityRegistrationLogin.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,8 +21,7 @@ import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button mLogout;
-    private TextView mWelcomeTV;
+    private LinearLayout mLocationLL;
     private FirebaseAuth firebaseAuth;
 
     private ImageButton mTravellerProfileIBtn,
@@ -43,30 +44,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        //************** Complete ***********
-
-        mWelcomeTV = findViewById(R.id.welcomeTV);
-        mLogout = findViewById(R.id.logout);
-//        mTravellerProfileIBtn = findViewById(R.id.home_travelerImageIconBTN);
-//        mNearbyIBtn = findViewById(R.id.home_nearbyIconBTN);
-//        mEventsIBtn = findViewById(R.id.home_eventsIconIBtn);
-//        mAllEventsIBtn = findViewById(R.id.home_allEventsIconIBtn);
-//        mHapppyMomentsIBtn = findViewById(R.id.main_happyMoments_iconIBtn);
-//        mWeatherIBtn = findViewById(R.id.main_weather_iconIBtn);
-
-        mLogout.setOnClickListener(this);
-
+        mLocationLL = findViewById(R.id.location_LL);
+        mLocationLL.setOnClickListener(this);
     }
 
-//******************** Start ******************
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_item, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.item_logout:
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public void onClick(View view) {
-        if (view == mLogout){
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(MainActivity.this,LoginActivity.class));
-
+        if (view == mLocationLL){
+            startActivity(new Intent(MainActivity.this, MapsActivity.class));
         }
     }
-    //***************Complete************
 }

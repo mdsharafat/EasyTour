@@ -69,7 +69,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
-        progressDialog.setMessage("Please wait a while. Processing data");
+        progressDialog.setMessage("Please wait a while...");
         progressDialog.show();
 
         firebaseAuth.createUserWithEmailAndPassword(email,password)

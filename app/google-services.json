@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "617198389910",
-    "firebase_url": "https://easytour-77698.firebaseio.com",
-    "project_id": "easytour-77698",
-    "storage_bucket": "easytour-77698.appspot.com"
+    "project_number": "498801508247",
+    "firebase_url": "https://easytourmanagement.firebaseio.com",
+    "project_id": "easytourmanagement",
+    "storage_bucket": "easytourmanagement.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:617198389910:android:e87e622726d8b190",
+        "mobilesdk_app_id": "1:498801508247:android:e87e622726d8b190",
         "android_client_info": {
           "package_name": "com.example.muhammad.easytour"
         }
       },
       "oauth_client": [
         {
-          "client_id": "617198389910-1otji993t5qj449plducrqtj2obgmu0i.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.muhammad.easytour",
-            "certificate_hash": "4caef6bb76910d0e24b085380a5bd0c105cd0e28"
-          }
-        },
-        {
-          "client_id": "617198389910-ejjnc43p6ua09chhgt7p4vv2rge5a0p3.apps.googleusercontent.com",
+          "client_id": "498801508247-35unahuvdcu9tdd0gfo9l7283me86kop.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAlxm6KVj5qb2J17CgJOlAQRRbh2ltodsE"
+          "current_key": "AIzaSyAhlfLuyoEDzNEvUpjn5cOnlSY6uWylbYc"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "617198389910-ejjnc43p6ua09chhgt7p4vv2rge5a0p3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

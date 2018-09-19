@@ -12,5 +12,6 @@
     <!-- Login -->
     <string name="string_login_BTN">Login</string>
     <string name="string_login_TV">Not have an account? Register here</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
