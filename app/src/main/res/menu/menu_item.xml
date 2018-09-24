@@ -5,7 +5,7 @@
     <item android:title="HOME"
         android:id="@+id/item_home"
         app:showAsAction="always"
-        android:icon="@mipmap/ic_launcher_home"
+        android:icon="@drawable/ic_launcher_home"
         />
 
     <item android:title="PROFILE"
@@ -14,6 +14,10 @@
 
     <item android:title="LOGOUT "
         android:id="@+id/item_logout"
+        app:showAsAction="never"/>
+
+    <item android:title="LOGIN "
+        android:id="@+id/item_login"
         app:showAsAction="never"/>
 
 </menu>

@@ -12,7 +12,7 @@ import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ProfileActivity extends AppCompatActivity {
+public class TourPlanActivity extends AppCompatActivity {
 
     private boolean isSignIn = false;
     private boolean isSignout = false;
@@ -23,14 +23,13 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_tour_plan);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater Inflater = getMenuInflater();
         Inflater.inflate(R.menu.menu_item, menu);
-        firebaseAuth = FirebaseAuth.getInstance();
+
         return true;
     }
 
@@ -45,12 +44,11 @@ public class ProfileActivity extends AppCompatActivity {
         SignOutItem.setVisible(true);
         SignInItem.setVisible(false);
         HomeItem.setVisible(true);
-        ProfileItem.setVisible(false);
+        ProfileItem.setVisible(true);
 
         return true;
 
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -60,11 +58,12 @@ public class ProfileActivity extends AppCompatActivity {
                 break;
             case R.id.item_profile:
                 isProfile = false;
+                startActivity(new Intent(this, ProfileActivity.class));
                 break;
             case R.id.item_logout:
                 firebaseAuth.signOut();
                 finish();
-                startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
 

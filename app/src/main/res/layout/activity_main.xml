@@ -174,7 +174,7 @@
         android:weightSum="3">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/menu_moments_cardview"
+            android:id="@+id/main_add_moments_cardview"
             android:layout_width="110dp"
             android:layout_height="140dp"
             android:layout_margin="5dp"
@@ -205,7 +205,8 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="serif"
                     android:padding="3dp"
-                    android:text="Moments"
+                    android:text="Add Moments"
+                    android:gravity="center"
                     android:textColor="@color/black_overlay"
                     android:textSize="13sp"
                     android:textStyle="normal" />
@@ -256,7 +257,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/main_all_events_cardView"
+            android:id="@+id/main_view_tour_events_cardView"
             android:layout_width="110dp"
             android:layout_height="140dp"
             android:layout_margin="5dp"
@@ -313,7 +314,7 @@
         android:weightSum="3">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/main_budget_cardView"
+            android:id="@+id/main_add_expense_cardView"
             android:layout_width="110dp"
             android:layout_height="140dp"
             android:layout_margin="5dp"
@@ -344,7 +345,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="serif"
                     android:padding="3dp"
-                    android:text="Budget"
+                    android:text="Add Expense"
                     android:textColor="@color/black_overlay"
                     android:textSize="13sp"
                     android:textStyle="normal" />
@@ -354,7 +355,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/main_about_cardView"
+            android:id="@+id/main_expense_list_cardView"
             android:layout_width="110dp"
             android:layout_height="140dp"
             android:layout_margin="5dp"
@@ -395,7 +396,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/main_expense_list_cardView"
+            android:id="@+id/main_view_moments_cardView"
             android:layout_width="110dp"
             android:layout_height="140dp"
             android:layout_margin="5dp"
@@ -426,6 +427,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="serif"
                     android:padding="3dp"
+                    android:gravity="center"
                     android:text="View Moments"
                     android:textColor="@color/black_overlay"
                     android:textSize="13sp"

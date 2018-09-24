@@ -35,11 +35,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
         <activity
             android:name=".ActivityGoogleMap.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ActivityOthersIntent.ProfileActivity"></activity>
+        <activity android:name=".ActivityOthersIntent.ProfileActivity" />
+        <activity android:name=".ActivityOthersIntent.AddMomentActivity" />
+        <activity android:name=".ActivityOthersIntent.ViewMomentActivity" />
+        <activity android:name=".ActivityOthersIntent.TourPlanActivity" />
+        <activity android:name=".ActivityOthersIntent.TourEventActivity" />
+        <activity android:name=".ActivityOthersIntent.AddExpenseActivity" />
+        <activity android:name=".ActivityOthersIntent.WeatherActivity" />
+        <activity android:name=".ActivityOthersIntent.ExpenseListActivity"></activity>
     </application>
 
 </manifest>
