@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    tools:context=".ActivityOthersIntent.ProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:weightSum="6"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_user_profile_pic"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:textColorHint="@color/black_overlay"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:textColorHint="@color/black_overlay"
+            android:drawableRight="@drawable/ic_user_name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:drawableRight="@drawable/ic_password_access"
+            android:textColorHint="@color/black_overlay"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Emergency Contact No"
+            android:drawableRight="@drawable/ic_emergency_call"
+            android:textColorHint="@color/black_overlay"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:drawableRight="@drawable/ic_home_address"
+            android:textColorHint="@color/black_overlay"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="center"
+        android:padding="4dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:fadingEdgeLength="4px"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:textColor="@color/black_overlay"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:background="@color/yello"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:textColor="@color/black_overlay"
+            android:dividerHeight="0.0px"
+            android:background="@color/yellow"/>
+    </LinearLayout>
+
+</LinearLayout>

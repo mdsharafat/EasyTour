@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:onClick="onClick"
-            android:src="@mipmap/search"
+            android:src="@drawable/ic_search_black_24dp"
             />
 
     </RelativeLayout>
@@ -46,10 +46,12 @@
         tools:context=".MapsActivity"
         android:layout_alignParentLeft="true" />
 
-    <RelativeLayout
+   <!-- <RelativeLayout
         android:id="@+id/second_relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigation"
+        >
 
         <ImageButton
             android:id="@+id/hospitals_nearby"
@@ -86,6 +88,16 @@
             />
 
 
-    </RelativeLayout>
+    </RelativeLayout> -->
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/nav_selector"
+        app:itemTextColor="@drawable/nav_selector"
+        app:menu="@menu/bottom_menu"
+        />
 
 </RelativeLayout>

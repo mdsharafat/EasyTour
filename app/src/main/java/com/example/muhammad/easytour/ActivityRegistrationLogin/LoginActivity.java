@@ -14,9 +14,11 @@ import android.widget.TextView;
 import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,10 +26,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText loginPassword;
     private Button loginBTN;
     private TextView loginRegisterTV;
+    private TextView loginStatusTV;
 
     private ProgressDialog progressDialog;
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
 
         if (firebaseAuth.getCurrentUser() != null){
             finish();
@@ -47,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginPassword = findViewById(R.id.login_password_ET);
         loginBTN = findViewById(R.id.login_BTN);
         loginRegisterTV = findViewById(R.id.login_TV);
-
+        loginStatusTV = findViewById(R.id.login_status_TV);
         loginBTN.setOnClickListener(this);
         loginRegisterTV.setOnClickListener(this);
 
@@ -75,11 +80,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if  (task.isSuccessful()){
+                            firebaseUser = firebaseAuth.getCurrentUser();
+                            updateUI();
                             finish();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
                     }
-                });
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                loginStatusTV.setText(e.getLocalizedMessage());
+            }
+        });
 
     }
 
@@ -92,5 +104,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(LoginActivity.this,RegistrationActivity.class);
             startActivity(intent);
         }
+    }
+
+    private void updateUI()
+    {
+        if (firebaseUser != null)
+        {
+            String displayUserName = firebaseUser.getDisplayName();
+            String displayUserEmail = firebaseUser.getEmail();
+            boolean status = firebaseUser.isEmailVerified();
+        }
+    }
+
+    private void validate(String userEmail, String userPassword)
+    {
+
     }
 }

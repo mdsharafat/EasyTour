@@ -13,15 +13,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.muhammad.easytour.ActivityGoogleMap.MapsActivity;
+import com.example.muhammad.easytour.ActivityOthersIntent.ProfileActivity;
 import com.example.muhammad.easytour.ActivityRegistrationLogin.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.zip.Inflater;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
+{
 
     private LinearLayout mLocationLL;
+    private LinearLayout mProfileLL;
     private FirebaseAuth firebaseAuth;
 
     private ImageButton mTravellerProfileIBtn,
@@ -30,14 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mWeatherIBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //********* Start **************
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser() == null){
+        if (firebaseAuth.getCurrentUser() == null)
+        {
             finish();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
@@ -45,21 +50,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         mLocationLL = findViewById(R.id.location_LL);
+        mProfileLL = findViewById(R.id.profile_LL);
+
+
         mLocationLL.setOnClickListener(this);
+        mProfileLL.setOnClickListener(this);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_item, menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
 
-        switch (item.getItemId()){
+        switch (item.getItemId())
+        {
             case R.id.item_logout:
                 firebaseAuth.signOut();
                 finish();
@@ -71,9 +83,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view) {
-        if (view == mLocationLL){
+    public void onClick(View view)
+    {
+        if (view == mLocationLL)
+        {
             startActivity(new Intent(MainActivity.this, MapsActivity.class));
+        }
+        if (view == mProfileLL)
+        {
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
         }
     }
 }

@@ -8,12 +8,14 @@ import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,6 +46,9 @@ public class MapsActivity extends FragmentActivity implements
 
 {
 
+
+
+
     private GoogleMap mMap;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
@@ -66,13 +71,94 @@ public class MapsActivity extends FragmentActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
+        // Latest Added Code
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                String hospital = "hospital", hotel = "hotel", restaurant = "restaurant", atm = "atm", market = "shopping mall";
+                Object transferData[] = new Object[2];
+                GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+
+                switch (item.getItemId()){
+                    case R.id.action_hotel:
+                        mMap.clear();
+                        String url1 = getUrl(latitude, longitude,hotel);
+                        transferData[0] = mMap;
+                        transferData[1] = url1;
+
+                        getNearbyPlaces.execute(transferData);
+                        Toast.makeText(getApplicationContext(), "Searching for Nearby Hotels", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Showing Nearby Hotels", Toast.LENGTH_LONG).show();
+
+                        break;
+
+
+                    case R.id.action_restaurant:
+                        mMap.clear();
+                        String url2 = getUrl(latitude, longitude,restaurant);
+                        transferData[0] = mMap;
+                        transferData[1] = url2;
+
+                        getNearbyPlaces.execute(transferData);
+                        Toast.makeText(getApplicationContext(), "Searching for Nearby Restaurants", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Showing Nearby Restaurants", Toast.LENGTH_LONG).show();
+
+                        break;
+
+                    case R.id.action_atm:
+                        mMap.clear();
+                        String url3 = getUrl(latitude, longitude,atm);
+                        transferData[0] = mMap;
+                        transferData[1] = url3;
+
+                        getNearbyPlaces.execute(transferData);
+                        Toast.makeText(getApplicationContext(), "Searching for Nearby ATM Booth", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Showing Nearby ATM Booth", Toast.LENGTH_LONG).show();
+
+                        break;
+
+                    case R.id.action_hospital:
+                        mMap.clear();
+                        String url4 = getUrl(latitude, longitude,hospital);
+                        transferData[0] = mMap;
+                        transferData[1] = url4;
+
+                        getNearbyPlaces.execute(transferData);
+                        Toast.makeText(getApplicationContext(), "Searching for Nearby Hospital", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Showing Nearby Hospital", Toast.LENGTH_LONG).show();
+
+                        break;
+
+                    case R.id.action_market:
+                        mMap.clear();
+                        String url5 = getUrl(latitude, longitude,market);
+                        transferData[0] = mMap;
+                        transferData[1] = url5;
+
+                        getNearbyPlaces.execute(transferData);
+                        Toast.makeText(getApplicationContext(), "Searching for Market", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Showing Nearby Market", Toast.LENGTH_LONG).show();
+
+                        break;
+
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+
     }
 
     public void onClick(View v){
 
-        String hospital = "hospital", school = "school", restaurant = "restaurant";
+        /*String hospital = "hospital", school = "school", restaurant = "restaurant";
         Object transferData[] = new Object[2];
-        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces(); */
 
 
         switch (v.getId()){
@@ -107,8 +193,9 @@ public class MapsActivity extends FragmentActivity implements
                 }else {
                     Toast.makeText(this, "Please write any location name", Toast.LENGTH_LONG).show();
                 }
+
                 break;
-            case R.id.hospitals_nearby:
+           /* case R.id.hospitals_nearby:
                 mMap.clear();
                 String url = getUrl(latitude, longitude,hospital);
                 transferData[0] = mMap;
@@ -141,6 +228,8 @@ public class MapsActivity extends FragmentActivity implements
                 Toast.makeText(this, "Searching for Nearby Restaurants", Toast.LENGTH_LONG).show();
                 Toast.makeText(this, "Showing Nearby Restaurants", Toast.LENGTH_LONG).show();
 
+                break; */
+            default:
                 break;
         }
     }

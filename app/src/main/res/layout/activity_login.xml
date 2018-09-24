@@ -57,4 +57,12 @@
         android:layout_marginTop="51dp"
         android:text="User Login" />
 
+    <TextView
+        android:id="@+id/login_status_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#e92c2c"
+        />
+
 </RelativeLayout>

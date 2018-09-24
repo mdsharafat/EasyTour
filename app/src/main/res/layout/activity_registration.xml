@@ -53,6 +53,14 @@
             android:layout_margin="15dp"
             android:textAlignment="center"/>
 
+        <TextView
+            android:id="@+id/registration_status_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#e92c2c"
+            />
+
     </LinearLayout>
 
 </RelativeLayout>

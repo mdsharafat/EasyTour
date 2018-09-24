@@ -10,8 +10,7 @@
 
     <item android:title="PROFILE"
         android:id="@+id/item_profile"
-        app:showAsAction="never"
-        android:icon="@mipmap/ic_launcher_traveller"/>
+        app:showAsAction="never"/>
 
     <item android:title="LOGOUT "
         android:id="@+id/item_logout"

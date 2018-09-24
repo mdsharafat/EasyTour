@@ -9,30 +9,52 @@
     android:background="@color/backgroundcolor"
     android:orientation="vertical"
     android:padding="10dp"
+    android:weightSum="3"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:clipToPadding="false"
         android:gravity="center"
         android:padding="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:weightSum="3"
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/main_profile_cardView"
             android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:layout_margin="5dp">
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="true"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false"
+            >
 
             <LinearLayout
+                android:id="@+id/profile_LL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_user" />
 
@@ -44,7 +66,7 @@
                     android:padding="3dp"
                     android:text="Profile"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -52,9 +74,18 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/main_location_cardView"
             android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:layout_margin="10dp">
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:id="@+id/location_LL"
@@ -64,8 +95,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_location" />
 
@@ -77,7 +108,7 @@
                     android:padding="3dp"
                     android:text="Location"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -86,9 +117,18 @@
 
 
         <android.support.v7.widget.CardView
+            android:id="@+id/main_weather_cardView"
             android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:layout_margin="5dp">
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,8 +137,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_weathercock" />
 
@@ -110,7 +150,7 @@
                     android:padding="3dp"
                     android:text="Weather"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -122,15 +162,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:clipToPadding="false"
         android:gravity="center"
+        android:orientation="horizontal"
         android:padding="10dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:weightSum="3">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/menu_moments_cardview"
             android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:layout_margin="5dp">
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -139,8 +194,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_photo_camera" />
 
@@ -152,7 +207,7 @@
                     android:padding="3dp"
                     android:text="Moments"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -160,9 +215,18 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/main_tour_plan_cardView"
             android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:layout_margin="10dp">
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,8 +235,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_timeline" />
 
@@ -184,7 +248,7 @@
                     android:padding="3dp"
                     android:text="Tour Plan"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -192,9 +256,18 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/main_all_events_cardView"
             android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:layout_margin="5dp">
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -203,8 +276,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_list" />
 
@@ -214,9 +287,9 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="serif"
                     android:padding="3dp"
-                    android:text="Events"
+                    android:text="Tour Events"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -228,15 +301,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:clipToPadding="false"
         android:gravity="center"
+        android:orientation="horizontal"
         android:padding="10dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:weightSum="3">
 
         <android.support.v7.widget.CardView
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_margin="5dp">
+            android:id="@+id/main_budget_cardView"
+            android:layout_width="110dp"
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -245,8 +333,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_credit_card" />
 
@@ -256,9 +344,9 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="serif"
                     android:padding="3dp"
-                    android:text="Expense"
+                    android:text="Budget"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -266,9 +354,18 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_margin="5dp">
+            android:id="@+id/main_about_cardView"
+            android:layout_width="110dp"
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -277,8 +374,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_budget" />
 
@@ -288,9 +385,50 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="serif"
                     android:padding="3dp"
-                    android:text="Moments"
+                    android:text="Expense List"
                     android:textColor="@color/black_overlay"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/main_expense_list_cardView"
+            android:layout_width="110dp"
+            android:layout_height="140dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_view_moments" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:padding="3dp"
+                    android:text="View Moments"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
