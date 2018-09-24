@@ -24,6 +24,7 @@ public class ExpenseListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_list);
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     @Override

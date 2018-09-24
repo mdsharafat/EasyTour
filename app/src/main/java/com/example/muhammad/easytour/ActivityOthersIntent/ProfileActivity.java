@@ -24,13 +24,13 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater Inflater = getMenuInflater();
         Inflater.inflate(R.menu.menu_item, menu);
-        firebaseAuth = FirebaseAuth.getInstance();
         return true;
     }
 

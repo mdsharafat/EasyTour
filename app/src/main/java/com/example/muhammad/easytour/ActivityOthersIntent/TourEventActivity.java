@@ -24,6 +24,7 @@ public class TourEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_event);
+        firebaseAuth = FirebaseAuth.getInstance();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
