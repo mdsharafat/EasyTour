@@ -1,66 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_black_overlay"
+    android:orientation="vertical"
     tools:context=".ActivityRegistrationLogin.RegistrationActivity">
 
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="139dp"
+        android:layout_height="139dp"
+        android:layout_gravity="center"
+        android:src="@drawable/easy_tour" />
+
     <LinearLayout
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:id="@+id/registrationTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         >
 
-        <TextView
-            android:id="@+id/registrationTitleTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/string_reg_title_ET"
-            />
+        <TextView style="@style/registrationTitle" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/registrationTriangle"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:rotation="45"
+        android:src="@drawable/square" />
+
+    <RelativeLayout
+        android:id="@+id/relativeEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/userEmail"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/orange"
+            android:padding="8dp"
+            android:src="@drawable/email"
+            android:tint="@color/lightgray" />
 
         <EditText
-            android:inputType="textEmailAddress"
             android:id="@+id/registration_email_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/userEmail"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-4dp"
+            android:layout_toRightOf="@+id/userEmail"
+            android:background="@color/lightgray"
             android:hint="@string/string_reg_email_ET"
-            android:layout_margin="15dp"
-            />
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/userPassword"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/orange"
+            android:padding="8dp"
+            android:src="@drawable/key"
+            android:tint="@color/lightgray" />
+
         <EditText
-            android:inputType="textPassword"
             android:id="@+id/registration_password_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/userPassword"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/userPassword"
+            android:background="@color/lightgray"
             android:hint="@string/string_reg_password_ET"
-            android:layout_margin="15dp"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+
+
             />
 
-        <Button
-            android:id="@+id/registration_BTN"
-            android:text="@string/string_reg_BTN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"/>
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/registration_signin_TV"
-            android:text="@string/string_reg_TV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:textAlignment="center"/>
 
-        <TextView
-            android:id="@+id/registration_status_TV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="#e92c2c"
-            />
+    <Button
+        android:id="@+id/registration_BTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/orange"
+        android:text="@string/string_reg_BTN"
+        android:textColor="@color/lightgray"/>
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/registration_signin_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="85dp"
+        android:text="@string/string_reg_TV"
+        android:textAlignment="center"
+        android:textColor="@color/black_overlay" />
 
-</RelativeLayout>
+    <TextView
+        android:layout_below="@+id/registration_signin_TV"
+        android:id="@+id/registration_status_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#e92c2c"
+        android:textAlignment="center"
+        />
+
+</LinearLayout>

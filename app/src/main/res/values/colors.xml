@@ -16,4 +16,5 @@
     <color name="pink">#fe104d</color>
 
     <color name="black_overlay">#172d39</color>
+    <color name="light_black_overlay">#f5f6fa</color>
 </resources>

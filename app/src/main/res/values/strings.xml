@@ -10,6 +10,7 @@
     <string name="string_reg_TV">Already register? Login here</string>
 
     <!-- Login -->
+    <string name="string_login_title_ET">User Login</string>
     <string name="string_login_BTN">Login</string>
     <string name="string_login_TV">Not have an account? Register here</string>
     <string name="title_activity_maps">Map</string>
