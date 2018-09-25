@@ -89,7 +89,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="serif"
             android:typeface="serif"
-            android:inputType="number"/>
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/from_dateET"
@@ -119,6 +119,7 @@
             android:inputType="text"/>
 
         <Button
+            android:id="@+id/saveTourPlan"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="Create"

@@ -6,21 +6,34 @@ public class TourPlanPojo {
 
     private String tourFrom;
     private String tourTo;
+    private String approxBudget;
     private String startingDate;
     private String endingDate;
-    private double approxBudget;
-
+    private String key;
 
     public TourPlanPojo() {
     }
 
-    public TourPlanPojo(String tourFrom, String tourTo, String startingDate, String endingDate, double approxBudget) {
+    public TourPlanPojo(String startFrom, String endTo, String approxBudget, String startDate, String endDate, String key) {
+        this.tourFrom = startFrom;
+        this.tourTo = endTo;
+        this.approxBudget = approxBudget;
+        this.startingDate = startDate;
+        this.endingDate = endDate;
+        this.key = key;
+    }
+
+    public TourPlanPojo(String tourFrom, String tourTo, String approxBudget, String startingDate, String endingDate) {
         this.tourFrom = tourFrom;
         this.tourTo = tourTo;
+        this.approxBudget = approxBudget;
         this.startingDate = startingDate;
         this.endingDate = endingDate;
-        this.approxBudget = approxBudget;
+
     }
+
+
+
 
     public String getTourFrom() {
         return tourFrom;
@@ -38,7 +51,11 @@ public class TourPlanPojo {
         return endingDate;
     }
 
-    public double getApproxBudget() {
+    public String getApproxBudget() {
         return approxBudget;
+    }
+
+    public String getKey() {
+        return key;
     }
 }

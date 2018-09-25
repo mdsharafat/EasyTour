@@ -1,6 +1,7 @@
 package com.example.muhammad.easytour.ActivityOthersIntent;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,12 @@ import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.PojoClass.TourPlanPojo;
 import com.example.muhammad.easytour.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,32 +33,66 @@ public class TourEventActivity extends AppCompatActivity {
     private boolean isHome = false;
     private boolean isProfile = false;
 
+    //Firebase
     private FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
     //RecyclerView
     RecyclerView recyclerView;
     TourEventsAdapter tourEventsAdapter;
-    List<TourPlanPojo> tourPlanPojoList;
+    ArrayList<TourPlanPojo> tourPlanPojoList;
+    ArrayList<TourPlanPojo> tourPlanShowList;
+    DatabaseReference rootReference;
+    DatabaseReference userReference;
+    DatabaseReference tourEventsReference;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_event);
-
-        //FirebaseAuth
-        firebaseAuth = FirebaseAuth.getInstance();
 
         //RecyclerView
         recyclerView = findViewById(R.id.tourEventsRecyclerViewID);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         tourPlanPojoList = new ArrayList<>();
-        tourPlanPojoList.add(new TourPlanPojo("Dhaka","Rangamati","10/8/2018","20/8/2018",200000));
-        tourPlanPojoList.add(new TourPlanPojo("Dhaka","Sylhet","1/8/2017","20/7/2018",300000));
-        tourPlanPojoList.add(new TourPlanPojo("Dhaka","Chittagong","21/8/2018","25/8/2018",150000));
-        tourPlanPojoList.add(new TourPlanPojo("Dhaka","Coxs Bazar","22/8/2018","20/8/2018",360000));
+        tourPlanShowList = new ArrayList<>();
+        //FirebaseAuth
+        firebaseAuth = FirebaseAuth.getInstance();
+        rootReference = FirebaseDatabase.getInstance().getReference();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        userReference = rootReference.child(firebaseUser.getUid());
+        tourEventsReference = userReference.child("tourEvents");
+        tourEventsReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                tourPlanShowList.clear();
+                tourPlanPojoList.clear();
+                if (dataSnapshot.exists()){
+                    for (DataSnapshot d : dataSnapshot.getChildren()){
+                        TourPlanPojo tourPlanPojo = d.getValue(TourPlanPojo.class);
+                        tourPlanPojoList.add(tourPlanPojo);
+                    }
+                    for (TourPlanPojo t : tourPlanPojoList){
+                        tourPlanShowList.add(new TourPlanPojo(t.getTourFrom(),t.getTourTo(),t.getApproxBudget(),t.getStartingDate(),t.getEndingDate()));
+                    }
+                    tourEventsAdapter = new TourEventsAdapter(getApplicationContext(), tourPlanShowList);
+                    recyclerView.setAdapter(tourEventsAdapter);
+                }
 
-        tourEventsAdapter = new TourEventsAdapter(this, tourPlanPojoList);
-        recyclerView.setAdapter(tourEventsAdapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
 
 
 

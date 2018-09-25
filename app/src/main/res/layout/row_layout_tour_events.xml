@@ -24,7 +24,9 @@
             android:padding="10dp"
             android:text="From"
             android:textAlignment="viewEnd"
-
+            android:textStyle="bold"
+            android:textAppearance="@color/darkblue"
+            android:textSize="15dp"
             />
 
         <TextView
@@ -35,7 +37,11 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="To"
-            android:textAlignment="viewEnd" />
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textAppearance="@color/darkblue"
+            android:textSize="15dp"
+            />
 
         <TextView
             android:id="@+id/rowLL_tourFromTV"
@@ -94,8 +100,11 @@
             android:layout_below="@+id/rowLL_srartDateTV"
             android:layout_weight="1"
             android:padding="10dp"
-            android:text="Approximate Budget"
-            android:textAlignment="viewStart" />
+            android:text="Approximate Budget : "
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            android:textAppearance="@color/darkblue"
+            android:textSize="15dp"/>
 
         <TextView
             android:id="@+id/approxBudgetAmountTV"
