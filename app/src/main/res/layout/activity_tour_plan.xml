@@ -89,7 +89,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="serif"
             android:typeface="serif"
-            android:inputType="text"/>
+            android:inputType="number"/>
 
         <EditText
             android:id="@+id/from_dateET"
