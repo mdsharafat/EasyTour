@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
     tools:context=".ActivityOthersIntent.AddExpenseActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/expensedetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expense Details"
+        android:inputType="text"
+        android:typeface="serif"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/expenseAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expense Amount"
+        android:inputType="number"
+        android:typeface="serif"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_below="@+id/expensedetails"
+        />
+
+    <Button
+        android:id="@+id/saveAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:fadingEdgeLength="4px"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:textColor="@color/light_black_overlay"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:background="#FFA000"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:layout_below="@+id/expenseAmount"/>
+
+</RelativeLayout>

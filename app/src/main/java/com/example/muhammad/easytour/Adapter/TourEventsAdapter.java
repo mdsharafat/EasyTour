@@ -39,7 +39,7 @@ public class TourEventsAdapter extends RecyclerView.Adapter<TourEventsAdapter.To
          TourPlanPojo tourPlanPojo = tourEventsList.get(position);
          holder.tourFrom.setText(tourPlanPojo.getTourFrom());
          holder.tourTo.setText(tourPlanPojo.getTourTo());
-        holder.approxBudget.setText(tourPlanPojo.getApproxBudget());
+         holder.approxBudget.setText(tourPlanPojo.getApproxBudget());
          holder.startingDate.setText(tourPlanPojo.getStartingDate());
          holder.endingDate.setText(tourPlanPojo.getEndingDate());
 

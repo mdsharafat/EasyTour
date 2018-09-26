@@ -1,12 +1,15 @@
 package com.example.muhammad.easytour.ActivityOthersIntent;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -17,39 +20,72 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.muhammad.easytour.ActivityRegistrationLogin.LoginActivity;
 import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 
 public class AddMomentActivity extends AppCompatActivity {
+    private boolean isSignIn = false;
+    private boolean isSignout = false;
+    private boolean isHome = false;
+    private boolean isProfile = false;
 
+
+    //Camera
     private Button mSaveMoments;
     private ImageView mCamera;
     private EditText mMomentDescription;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int MY_CAMERA_REQUEST_CODE = 2;
     private String mPhotoData;
+    private StorageReference mStorage;
+    private ProgressDialog mProgress;
+    private StorageReference filepath;
 
-    private boolean isSignIn = false;
-    private boolean isSignout = false;
-    private boolean isHome = false;
-    private boolean isProfile = false;
-
+    //Firebase Database
     private FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+    DatabaseReference rootReference;
+    DatabaseReference userReference;
+    DatabaseReference momentReference;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_moment);
         firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() == null){
+            finish();
+            startActivity(new Intent(AddMomentActivity.this, LoginActivity.class));
+        }
+        rootReference = FirebaseDatabase.getInstance().getReference();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        userReference = rootReference.child(firebaseUser.getUid());
+        momentReference = userReference.child("moments");
 
+
+        //Camera
         mSaveMoments = findViewById(R.id.saveMoment);
         mCamera = findViewById(R.id.momentImage);
         mMomentDescription = findViewById(R.id.momentDetails);
-
+        mStorage = FirebaseStorage.getInstance().getReference();
+        mProgress = new ProgressDialog(this);
         mCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +105,9 @@ public class AddMomentActivity extends AppCompatActivity {
             mPhotoData = encodeToBase64 (imageBitmap,Bitmap.CompressFormat.JPEG, 50);
             System.out.println(mPhotoData);
             mCamera.setImageBitmap(imageBitmap);
+
+            //mProgress.setMessage("Uploading Image");
+            //mProgress.show();
         }
     }
 
