@@ -78,7 +78,7 @@ public class ExpenseListActivity extends AppCompatActivity {
                         addExpensePojos.add(addExpensePojo);
                     }
                     for (AddExpensePojo t : addExpensePojos) {
-                        addExpenseShowPojos.add(new AddExpensePojo(t.getmExpenseDetails(), t.getmExpenseAmount()));
+                        addExpenseShowPojos.add(new AddExpensePojo(t.getmExpenseDetails(), t.getmExpenseAmount(),t.getDate(),t.getTime()));
                     }
                     expenseListAdapter = new ExpenseListAdapter(getApplicationContext(), addExpenseShowPojos);
                     recyclerView.setAdapter(expenseListAdapter);

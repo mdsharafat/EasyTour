@@ -22,6 +22,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import java.util.Map;
 
@@ -78,11 +82,19 @@ public class AddExpenseActivity extends AppCompatActivity {
     }
 
     public void save(){
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date todayDate = new Date();
+        String thisDate = currentDate.format(todayDate);
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("HH:mm:ss");
+        String strDate = mdformat.format(calendar.getTime());
+
         String expenseDetails = mExpenseDetails.getText().toString().trim();
         String expenseAmount = mExpenseAmount.getText().toString().trim();
         //long date = SystemClock.currentThreadTimeMillis();
         String key = rootReference.push().getKey();
-        AddExpensePojo addExpensePojo = new AddExpensePojo(expenseDetails,expenseAmount,key);
+        AddExpensePojo addExpensePojo = new AddExpensePojo(expenseDetails,expenseAmount,thisDate,strDate,key);
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         rootReference.child(user.getUid()).child("addExpense").push().setValue(addExpensePojo);

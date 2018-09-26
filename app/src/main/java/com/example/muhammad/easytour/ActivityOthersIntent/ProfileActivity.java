@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.muhammad.easytour.ActivityRegistrationLogin.LoginActivity;
 import com.example.muhammad.easytour.MainActivity;
@@ -19,12 +22,35 @@ public class ProfileActivity extends AppCompatActivity {
     private boolean isHome = false;
     private boolean isProfile = false;
 
+    private ImageView mProfilePic;
+    private EditText mFullName;
+    private EditText mEmail;
+    private EditText mPassword;
+    private EditText mPhone;
+    private EditText mAddress;
+    private Button mSaveButton;
+    private Button mUpdateButton;
+
+
+
+
     private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        mProfilePic = findViewById(R.id.profilePic);
+
+
+
+
         firebaseAuth = FirebaseAuth.getInstance();
+
+
+
+
+
     }
 
     @Override

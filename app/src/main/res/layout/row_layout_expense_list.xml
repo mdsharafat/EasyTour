@@ -17,7 +17,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-      <!--  <TextView
+       <TextView
             android:id="@+id/dateOfExpense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,7 +28,20 @@
             android:textStyle="bold"
             android:textAppearance="@color/darkblue"
             android:textSize="15dp"
-            /> -->
+            />
+        <TextView
+            android:id="@+id/timeOfExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Time"
+            android:textAlignment="viewEnd"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:textAppearance="@color/darkblue"
+            android:textSize="15dp"
+            />
 
         <TextView
             android:id="@+id/rowLL_expenseDetailsTV"
@@ -38,7 +51,8 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="Snacks"
-            android:textAlignment="viewStart" />
+            android:textAlignment="viewStart"
+            android:layout_below="@+id/dateOfExpense"/>
 
         <TextView
             android:id="@+id/rowLL_expenseAmountTV"
@@ -48,7 +62,8 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="2000"
-            android:textAlignment="viewEnd" />
+            android:textAlignment="viewEnd"
+            android:layout_below="@+id/timeOfExpense"/>
 
 
     </RelativeLayout>

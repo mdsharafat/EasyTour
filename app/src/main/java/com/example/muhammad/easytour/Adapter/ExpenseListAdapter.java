@@ -39,7 +39,8 @@ public class ExpenseListAdapter extends RecyclerView.Adapter<ExpenseListAdapter.
         AddExpensePojo addExpensePojo = expensePojoList.get(position);
         holder.expenseDetails.setText(addExpensePojo.getmExpenseDetails());
         holder.expenseAmount.setText(addExpensePojo.getmExpenseAmount());
-        //holder.dateTime.setText(String.valueOf(addExpensePojo.getDateTime()));
+        holder.dateTime.setText(String.valueOf(addExpensePojo.getDate()));
+        holder.time.setText(String.valueOf(addExpensePojo.getTime()));
 
     }
 
@@ -51,7 +52,8 @@ public class ExpenseListAdapter extends RecyclerView.Adapter<ExpenseListAdapter.
     class ExpenseListViewHolder extends RecyclerView.ViewHolder{
         TextView expenseDetails;
         TextView expenseAmount;
-       // TextView dateTime;
+        TextView dateTime;
+        TextView time;
 
 
 
@@ -59,7 +61,8 @@ public class ExpenseListAdapter extends RecyclerView.Adapter<ExpenseListAdapter.
             super(itemView);
             expenseDetails = itemView.findViewById(R.id.rowLL_expenseDetailsTV);
             expenseAmount = itemView.findViewById(R.id.rowLL_expenseAmountTV);
-           // dateTime = itemView.findViewById(R.id.dateOfExpense);
+            dateTime = itemView.findViewById(R.id.dateOfExpense);
+            time = itemView.findViewById(R.id.timeOfExpense);
 
         }
     }
