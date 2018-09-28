@@ -116,7 +116,7 @@ public class TourEventActivity extends AppCompatActivity {
         SignOutItem.setVisible(true);
         SignInItem.setVisible(false);
         HomeItem.setVisible(true);
-        ProfileItem.setVisible(true);
+        ProfileItem.setVisible(false);
 
         return true;
 

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth firebaseAuth;
 
     //Card View Variable
-    private CardView mProfileCardView;
+    //private CardView mProfileCardView;
     private CardView mLocationCardView;
     private CardView mWeatherCardView;
     private CardView mAddMomentsCardView;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        mProfileCardView = findViewById(R.id.main_profile_cardView);
+        //mProfileCardView = findViewById(R.id.main_profile_cardView);
         mLocationCardView = findViewById(R.id.main_location_cardView);
         mWeatherCardView = findViewById(R.id.main_weather_cardView);
         mAddMomentsCardView = findViewById(R.id.main_add_moments_cardview);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mExpenseListCardView = findViewById(R.id.main_expense_list_cardView);
         mViewMomentsCardView = findViewById(R.id.main_view_moments_cardView);
 
-        mProfileCardView.setOnClickListener(this);
+        //mProfileCardView.setOnClickListener(this);
         mLocationCardView.setOnClickListener(this);
         mWeatherCardView.setOnClickListener(this);
         mAddMomentsCardView.setOnClickListener(this);
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SignOutItem.setVisible(true);
         SignInItem.setVisible(false);
         HomeItem.setVisible(false);
-        ProfileItem.setVisible(true);
+        ProfileItem.setVisible(false);
 
         return true;
 
@@ -148,10 +148,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-        if (view == mProfileCardView )
-        {
-            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-        }
+        //if (view == mProfileCardView )
+       // {
+       //     startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+       // }
         if (view == mLocationCardView)
         {
             startActivity(new Intent(MainActivity.this, MapsActivity.class));

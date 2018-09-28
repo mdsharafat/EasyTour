@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -25,24 +24,22 @@ import android.widget.Toast;
 import com.example.muhammad.easytour.ActivityRegistrationLogin.LoginActivity;
 import com.example.muhammad.easytour.MainActivity;
 import com.example.muhammad.easytour.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
+
 
 import java.io.ByteArrayOutputStream;
+
 
 public class AddMomentActivity extends AppCompatActivity {
     private boolean isSignIn = false;
     private boolean isSignout = false;
     private boolean isHome = false;
     private boolean isProfile = false;
-
 
     //Camera
     private Button mSaveMoments;
@@ -106,6 +103,9 @@ public class AddMomentActivity extends AppCompatActivity {
             System.out.println(mPhotoData);
             mCamera.setImageBitmap(imageBitmap);
 
+            Uri uri = data.getData();
+            Toast.makeText(this, String.valueOf(uri), Toast.LENGTH_LONG).show();
+
             //mProgress.setMessage("Uploading Image");
             //mProgress.show();
         }
@@ -162,7 +162,7 @@ public class AddMomentActivity extends AppCompatActivity {
         SignOutItem.setVisible(true);
         SignInItem.setVisible(false);
         HomeItem.setVisible(true);
-        ProfileItem.setVisible(true);
+        ProfileItem.setVisible(false);
 
         return true;
 
